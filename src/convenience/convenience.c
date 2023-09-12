@@ -246,11 +246,8 @@ time_t localtimestr_to_time(const char * str, double * fraction) {
 	
 	if (!p)
 		return 0;
-#ifndef _WIN32
-	return timelocal(p);
-#else
+
 	return mktime(p);
-#endif
 }
 
 
